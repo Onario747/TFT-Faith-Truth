@@ -195,18 +195,6 @@ export const Results: React.FC<ResultsProps> = ({
           Begin Another Journey
         </motion.button>
 
-        <motion.a
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          href="https://chat.whatsapp.com/HxoeoVTi6Go2b8XZxee0ys"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center justify-center gap-2 text-amber-800 hover:text-amber-900 mt-4 underline"
-        >
-          <Share2 className="w-4 h-4" />
-          Join the TFT WhatsApp group to grow with like-minded peers!
-        </motion.a>
-
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
