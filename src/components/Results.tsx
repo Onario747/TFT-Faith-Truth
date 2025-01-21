@@ -201,7 +201,7 @@ export const Results: React.FC<ResultsProps> = ({
           href="https://chat.whatsapp.com/HxoeoVTi6Go2b8XZxee0ys"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center justify-center gap-2 text-amber-800 hover:text-amber-900 mt-4"
+          className="flex items-center justify-center gap-2 text-amber-800 hover:text-amber-900 mt-4 underline"
         >
           <Share2 className="w-4 h-4" />
           Join the TFT WhatsApp group to grow with like-minded peers!
