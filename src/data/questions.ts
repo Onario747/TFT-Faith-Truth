@@ -9,45 +9,64 @@ export interface Question {
 export const questions: Question[] = [
   {
     id: 1,
-    text: "Who led the Israelites out of Egypt?",
-    options: ["Abraham", "Moses", "David", "Joshua"],
-    correctAnswer: 1,
+    text: "Did God create evil, according to the Bible?",
+    options: ["Yes", "No", "It’s a mystery", "Depends on interpretation"],
+    correctAnswer: 3,
     explanation:
-      "Moses was chosen by God to lead the Israelites out of Egypt (Exodus).",
+      "Some interpret Isaiah 45:7 to mean God created everything, including calamity, while others believe evil stems from free will.",
   },
   {
     id: 2,
-    text: "What is the first book of the Bible?",
-    options: ["Genesis", "Exodus", "Leviticus", "Numbers"],
-    correctAnswer: 0,
+    text: "Can someone lose their salvation?",
+    options: [
+      "Yes, through sin",
+      "No, it’s eternal",
+      "Only if they renounce faith",
+      "It’s unclear",
+    ],
+    correctAnswer: 3,
     explanation:
-      "Genesis is the first book of the Bible and tells the story of creation.",
+      "Different denominations have varied views on eternal security and free will.",
   },
   {
     id: 3,
-    text: "Who was swallowed by a great fish?",
-    options: ["Elijah", "Jonah", "Daniel", "Peter"],
-    correctAnswer: 1,
+    text: "Should women be pastors or church leaders?",
+    options: [
+      "Yes, fully allowed",
+      "No, against Scripture",
+      "Only in some roles",
+      "Culture decides",
+    ],
+    correctAnswer: 2,
     explanation:
-      "Jonah was swallowed by a great fish after fleeing from God's command.",
+      "1 Timothy 2:12 and Galatians 3:28 lead to ongoing debates about gender roles in the church.",
   },
   {
     id: 4,
-    text: "What was the name of Jesus’ mother?",
-    options: ["Mary", "Elizabeth", "Martha", "Sarah"],
-    correctAnswer: 0,
-    explanation: "Mary was the mother of Jesus, chosen by God for this role.",
+    text: "Are Christians required to follow the Old Testament law?",
+    options: [
+      "Yes, all laws apply",
+      "No, Jesus fulfilled them",
+      "Only moral laws apply",
+      "Depends on the covenant",
+    ],
+    correctAnswer: 2,
+    explanation:
+      "This is debated based on Matthew 5:17 and Paul’s letters about the role of the law.",
   },
   {
     id: 5,
-    text: "Which disciple walked on water with Jesus?",
-    options: ["John", "Peter", "James", "Andrew"],
-    correctAnswer: 1,
+    text: "Should Christians celebrate Christmas?",
+    options: [
+      "Yes, it honors Christ",
+      "No, it’s pagan in origin",
+      "It doesn’t matter",
+      "Depends on personal conviction",
+    ],
+    correctAnswer: 3,
     explanation:
-      "Peter walked on water toward Jesus but started sinking when he doubted.",
+      "Some view Christmas as a sacred celebration, while others argue its origins conflict with Christian principles.",
   },
-
-  // Thought-Provoking Questions
   {
     id: 6,
     text: "If you could ask God one question, what would it be?",
