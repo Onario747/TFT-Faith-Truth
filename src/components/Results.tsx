@@ -1,13 +1,15 @@
-import React, { useEffect } from "react";
-import { Crown, Share2 } from "lucide-react";
-import { motion } from "framer-motion";
 import confetti from "canvas-confetti";
+import { motion } from "framer-motion";
+import { Crown } from "lucide-react";
+import React, { useEffect } from "react";
+import { FaWhatsapp } from "react-icons/fa";
 
 interface ResultsProps {
   score: number;
   totalQuestions: number;
   playerName: string;
   onRestart: () => void;
+  gameLink: string;
 }
 
 const getAnalysis = (
@@ -83,6 +85,7 @@ export const Results: React.FC<ResultsProps> = ({
   totalQuestions,
   playerName,
   onRestart,
+  gameLink,
 }) => {
   const percentage = (score / totalQuestions) * 100;
   const analysis = getAnalysis(percentage);
@@ -92,6 +95,14 @@ export const Results: React.FC<ResultsProps> = ({
       triggerConfetti();
     }
   }, [percentage]);
+
+  const shareScoreMessage = `I scored ${percentage.toFixed(
+    1
+  )}% on the Faith Journey Quiz! 🏆 You no fit beat me sha!, Check and join the fun and see how much you score! Click here to play: ${gameLink}`;
+
+  const whatsappShareLink = `https://wa.me/?text=${encodeURIComponent(
+    shareScoreMessage
+  )}`;
 
   return (
     <motion.div
@@ -150,53 +161,39 @@ export const Results: React.FC<ResultsProps> = ({
           </h4>
           <p className="text-amber-800 mb-4">{analysis.guidance}</p>
         </motion.div>
+      </motion.div>
 
-        <motion.div
-          initial={{ y: 20, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 1 }}
-          className="border-t border-amber-200 pt-4 mt-4"
+      <motion.div
+        initial={{ y: 20, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ delay: 1 }}
+        className="text-center"
+      >
+        <a
+          href={whatsappShareLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 px-6 py-3 bg-green-500 hover:bg-green-600 text-white rounded-lg shadow-md transform transition-transform duration-200 hover:scale-105"
         >
-          <h4 className="font-serif font-bold text-amber-900 mb-2">
-            Join Our Community:
-          </h4>
-          <motion.a
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            href="https://chat.whatsapp.com/HxoeoVTi6Go2b8XZxee0ys"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center justify-center gap-2 text-amber-800 hover:text-amber-900"
-          >
-            <Share2 className="w-4 h-4" />
-            Join our WhatsApp group for spiritual growth
-          </motion.a>
-        </motion.div>
+          <FaWhatsapp className="w-4 h-4" />
+          Share Your Score on WhatsApp
+        </a>
       </motion.div>
 
       <motion.div
         initial={{ y: 20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 1.2 }}
-        className="text-center"
+        className="text-center mt-6"
       >
         <motion.button
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           onClick={onRestart}
-          className="px-8 py-3 bg-amber-700 hover:bg-amber-800 text-white font-medium rounded-md transition-colors duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 mb-4"
+          className="px-8 py-3 bg-amber-700 hover:bg-amber-800 text-white font-medium rounded-md transition-colors duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
         >
           Begin Another Journey
         </motion.button>
-
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.4 }}
-          className="text-sm text-amber-700 mt-6"
-        >
-          Created by Onario and Olive - Courtesy TFT
-        </motion.p>
       </motion.div>
     </motion.div>
   );

@@ -58,6 +58,7 @@ function App() {
             totalQuestions={questions.length}
             playerName={playerName}
             onRestart={handleRestart}
+            gameLink='https://tft-faith-game.vercel.app'
           />
         )}
       </div>
