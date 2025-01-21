@@ -1,6 +1,6 @@
 import confetti from "canvas-confetti";
 import { motion } from "framer-motion";
-import { Crown, Share2 } from "lucide-react";
+import { Crown } from "lucide-react";
 import React, { useEffect } from "react";
 import { FaWhatsapp } from "react-icons/fa";
 
